@@ -18,5 +18,7 @@ categories$;
 
   ngOnInit() {
   }
+  
+
 
 }

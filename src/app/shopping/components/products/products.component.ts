@@ -47,5 +47,16 @@ async ngOnInit() {
      this.filterProducts = (this.category) ? 
       this.products.filter(p => p.category === this.category) :
       this.products; 
+      console.log("one",this.filterProducts);
  }
+
+
+ filters(query: string) {
+  console.log("filter",query)
+  this.filterProducts = (query) ? 
+  this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase())) : this.products;
+      console.log("two",this.filterProducts);
+  
+}
+
 }

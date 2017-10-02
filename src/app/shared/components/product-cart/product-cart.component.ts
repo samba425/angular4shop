@@ -13,6 +13,8 @@ export class ProductCartComponent {
 @Input('product') product;
 @Input('show-action') showAction= true;
 @Input('shopping-cart') shoppingCart: ShoppingCart;
+
+
   constructor(private cartService: ShoppingCartService) { }
 
  addToCart() {

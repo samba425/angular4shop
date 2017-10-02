@@ -27,8 +27,5 @@ export class NavbarComponent implements OnInit {
  logout() {
   this.auth.logout();
  }
-
- filter(query){
-console.log(query)
- }
+ 
 }
