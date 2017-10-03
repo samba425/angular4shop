@@ -23,7 +23,7 @@ export class OrderService {
    return this.db.list('/orders', {
      query: {
        orderByChild: 'userId',
-       qualTo: userId
+       equalTo: userId
      }
    })
  }

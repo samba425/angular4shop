@@ -24,8 +24,12 @@ category: string;
 
    
    }
- 
+    message: string;
 async ngOnInit() {
+    this.shoppingCartService.currentMessage.subscribe(message => {
+      this.filters(message);
+      this.message = message});
+      
   this.cart$  = (await this.shoppingCartService.getCart());
   this.populateProducts();
 }
@@ -47,15 +51,12 @@ async ngOnInit() {
      this.filterProducts = (this.category) ? 
       this.products.filter(p => p.category === this.category) :
       this.products; 
-      console.log("one",this.filterProducts);
  }
 
 
  filters(query: string) {
-  console.log("filter",query)
   this.filterProducts = (query) ? 
   this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase())) : this.products;
-      console.log("two",this.filterProducts);
   
 }
 

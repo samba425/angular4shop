@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs/Rx';
 import { products } from '../models/product-model';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -64,4 +65,11 @@ let item$ = this.getItem(cartId,product.$key);
   });
 }
 
+
+private messageSource = new BehaviorSubject<string>("");
+ currentMessage = this.messageSource.asObservable();
+    changeMessage(message: string) {
+    this.messageSource.next(message);
+  }
+  
 }

@@ -1,12 +1,10 @@
 <div class="row">
-  
   <div class="col-3">
     <div class="form-group">
    <input class="form-control" #querys (keyup)="filters(querys.value)" placeholder="Search Products.." />
    </div>
    <product-filter [category]="category"></product-filter>
   </div>
-
   <div class="col">   
 <div class="row" *ngIf="cart$ | async as cart">
   <ng-container *ngFor="let p of filterProducts; let i = index">

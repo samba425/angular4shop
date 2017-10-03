@@ -12,7 +12,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-       NgbModule.forRoot(),   //NgbModule for ng-bootstrap 
+   NgbModule.forRoot(),   //NgbModule for ng-bootstrap 
    RouterModule.forChild([])
   ],
   declarations: [

@@ -2,7 +2,7 @@ import { ShoppingCart } from '../../../shared/models/shopping-cart';
 import { ShoppingCartService } from '../../../shared/services/shopping-cart.service';
 import { UserModal } from '../../../shared/models/user-modal';
 import { AuthService } from '../../../shared/services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -11,7 +11,6 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
   AuthUser: UserModal;
   cart$: Observable<ShoppingCart>;
 
@@ -28,4 +27,8 @@ export class NavbarComponent implements OnInit {
   this.auth.logout();
  }
  
+
+ filterProduct(querys){
+      this.shoppingCartService.changeMessage(querys)
+ }
 }

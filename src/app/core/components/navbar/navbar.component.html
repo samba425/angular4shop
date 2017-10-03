@@ -17,7 +17,9 @@
         </span>
         </a>
       </li> 
-     
+      <div>
+   <input class="form-control" #querys  (keyup)="filterProduct(querys.value)" placeholder="Search Products.." />
+   </div>
     </ul>  <ul class="navbar-nav">
       <ng-template #anonymousUser>
       <li  class="nav-item">
