@@ -2,14 +2,14 @@ import { products } from '../models/product-model';
 
 
 export class ShoppingCartItem {
-    $key: string;
+    _id : string;
     title: string;
     price:number;
     imageUrl: string;
     quantity: number;
 
  constructor(init?: Partial<ShoppingCartItem> ){
-     Object.assign(this,init);
+    return Object.assign(this,init);
 
  }
 

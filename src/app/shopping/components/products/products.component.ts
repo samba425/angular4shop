@@ -31,13 +31,18 @@ async ngOnInit() {
       this.message = message});
       
   this.cart$  = (await this.shoppingCartService.getCart());
+  console.log("hello i am here",this.cart$)
   this.populateProducts();
+  await this.shoppingCartService.getCart().then((x) => {
+    console.log("sasgkaskags", x)
+  })
 }
 
  private populateProducts(){
      this.productService
     .getAllProducts()
     .switchMap(products => {
+      console.log(products)
        this.products = products;
        return this.route.queryParamMap;
    })

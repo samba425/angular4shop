@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { AdminAuthGuardService } from '../admin/services/admin-auth-guard.service';
 import { ProductQuantityComponent } from '../shopping/components/product-quantity/product-quantity.component';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
@@ -21,6 +22,7 @@ import { CustomFormsModule } from 'ng2-validation';
 @NgModule({
   imports: [
     CommonModule,
+    HttpModule,
     FormsModule,
     CustomFormsModule,
     DataTableModule,
